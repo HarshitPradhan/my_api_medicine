@@ -35,5 +35,34 @@ namespace my_api.Controllers
                 user.UserName
             };
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [Route("ForAdmin")]
+        public string GetForAdmin()
+        {
+            return "method for admin";
+        }
+
+
+
+        [HttpGet]
+        [Authorize(Roles = "Customer")]
+        [Route("ForCustomer")]
+        public string GetCustomer()
+        {
+            return "method for cust";
+        }
+
+
+
+        [HttpGet]
+        [Authorize(Roles = "Admin,Customer")]
+        [Route("ForAdminOrCustomer")]
+        public string GetForAdminOrCustomer()
+        {
+            return "method for both ";
+        }
     }
 }
+
