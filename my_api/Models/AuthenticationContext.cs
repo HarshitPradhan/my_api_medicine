@@ -15,5 +15,9 @@ namespace my_api.Models
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Category> categories { get; set; }
+        public DbSet<Medicine> medicines { get; set; }
+
+
     }
 }
